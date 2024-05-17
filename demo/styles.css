@@ -1,0 +1,37 @@
+body {
+  background: #fafafa;
+}
+#clean-up {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+  background: #000;
+  border: 1px solid #000;
+  transition: all .3s;
+  cursor: pointer;
+}
+#clean-up:hover {
+  background: #fff;
+  color: #000;
+}
+#demo {
+  position: relative;
+  max-width: 600px;
+  margin: 50px auto;
+}
+#suggestion {
+  margin: 50px 0
+}
+.body {
+  padding: 110px;
+}
+.configured info-banner::part(banner-wrapper) {
+  background: #ffeceb;
+}
+.configured info-banner::part(banner-content),
+.configured info-banner::part(banner-title) {
+  color: blue;
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <!-- InfoBanner component default state without configuration-->
+  <info-banner>
+    <span slot="title">This is default banner</span>
+    <span slot="content">This banner's styles are pre-defined by component</span>
+  </info-banner>
+
+  <!--
+    InfoBanner component default state with configuration props
+    backgroundColor type String
+    textColor type String
+  -->
+  <info-banner backgroundColor="#fff7d6" textColor="#000">
+    <span slot="title">This is configured banner</span>
+    <span slot="content">This banner's styles are configured from html by props</span>
+  </info-banner>
+
+  <!--
+    InfoBanner component default state with configuration from main page styles ::part pseudo class
+  -->
+  <div class="configured">
+    <info-banner>
+      <span slot="title">This is configured banner</span>
+      <span slot="content">This banner's styles are configured from main styles with help of ::part pseudo class</span>
+    </info-banner>
+  </div>
+
+  <!--
+    SubscriptionComponent component
+    title type String
+  -->
+  <div id="demo">
+    <button id="clean-up">CLEAN</button>
+    <subscription-component title="10% off when you sign up for our newsletter">
+      <span slot="description">Sign up to get the latest info on sales, new releases and much more...</span>
+    </subscription-component>
+  </div>
+
+  <!--
+    ProductSuggestion component
+    title type String
+    productsPerPage type Number
+  -->
+  <div id="suggestion">
+    <product-suggestion title="Suggested products" productsPerPage="5">
+    </product-suggestion>
+  </div>
+
+  <script type="module" src="../custom-component.js"></script>
+  <script>
+    document.getElementById('clean-up').addEventListener("click", () => {
+      localStorage.removeItem('CC_Subscribed')
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>
